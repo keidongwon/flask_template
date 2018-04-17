@@ -1,0 +1,29 @@
+{
+  "system": {
+    "port": 8080,
+    "mode": "debug",
+    "language": "ko"
+  },
+  "db": {
+    "host": "127.0.0.1",
+    "port": 3306,
+    "user": "user",
+    "password": "pwd",
+    "dbname": "dbname",
+    "pool_size": 5,
+    "connect_timeout": 3
+  },
+  "redis": {
+    "host": "127.0.0.1",
+    "port": 6379,
+    "password": "",
+    "max_connections": 10,
+    "connect_timeout": 3
+  },
+  "log": {
+    "prefix": "template",
+    "path": "/home/keidw/git/template_flask/log",
+    "level": "DEBUG",
+    "console": 1
+  }
+}
