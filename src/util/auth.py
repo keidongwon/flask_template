@@ -1,4 +1,5 @@
-from flask import session, redirect, request
+from flask import redirect, request
+
 
 def check_auth(functor):
     def decorated(*args, **kwargs):

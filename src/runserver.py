@@ -1,3 +1,4 @@
+import logging
 from flask import Flask
 from flask_restful import Api
 from common.constant import FilePrefix
@@ -6,14 +7,13 @@ from common import preload
 from common import config
 from common import errorcode
 from common import version
-import logging
-from routes import main
+import routes
 
 
 app = Flask(__name__)
 app.jinja_env.auto_reload = True
 api = Api(app)
-api.add_resource(main.Root, '/')
+routes.init(api)
 
 
 class Service(object):
