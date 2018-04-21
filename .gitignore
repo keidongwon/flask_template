@@ -4,4 +4,6 @@ venv/
 *.pyc
 *.log
 *.bak
+src/data/
+
 
