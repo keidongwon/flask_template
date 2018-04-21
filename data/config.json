@@ -22,7 +22,7 @@
   },
   "log": {
     "prefix": "template",
-    "path": "c:/temp/log",
+    "path": "../log",
     "level": "DEBUG",
     "console": 1
   }
