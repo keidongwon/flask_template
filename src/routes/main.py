@@ -3,7 +3,7 @@ from flask import request, render_template, make_response
 
 
 class Root(Resource):
-    def get():
+    def get(self):
         uid = request.cookies.get("uid")
         headers = {'Content-Type': 'text/html'}
         data = dict()
