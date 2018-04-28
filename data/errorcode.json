@@ -1,10 +1,10 @@
 {
-  "0000": {
-    "name": "ERROR_SUCCESS",
-    "desc": "OK"
-  },
-  "0001": {
-    "name": "ERROR_UNKNOWN",
-    "desc": "unknown error"
-  }
+    "0000": {
+        "name": "ERROR_SUCCESS",
+        "desc": "OK"
+    },
+    "0001": {
+        "name": "ERROR_UNKNOWN",
+        "desc": "unknown error"
+    }
 }
