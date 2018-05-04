@@ -1,14 +1,14 @@
 ﻿-- project description
 -- date : 201X.00.00
--- author :  
+-- author :
 
 -- --------------------------------------------------------------------------
 -- DROP TABLE IF EXISTS `member`;
 CREATE TABLE IF NOT EXISTS `member` (
     `no`                    INT                 NOT NULL AUTO_INCREMENT,
     `uid`                   VARCHAR(40)         NOT NULL,
-    `pwd`                   VARCHAR(50)         NOT NULL,
-    `salt`                  VARCHAR(50)         NOT NULL,
+    `pwd`                   VARCHAR(100)        NOT NULL,
+    `salt`                  VARCHAR(100)        NOT NULL,
     `username`              VARCHAR(30)         NOT NULL,
     `nickname`              VARCHAR(30)         DEFAULT NULL,
     `email`                 VARCHAR(50)         DEFAULT NULL,
