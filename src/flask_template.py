@@ -9,6 +9,7 @@ import routes
 
 app = Flask(__name__)
 app.jinja_env.auto_reload = True
+app.config.update(TEMPLATES_AUTO_RELOAD=True)
 api = Api(app)
 routes.init(api)
 
@@ -24,16 +25,11 @@ def setup():
         sys.exit()
 
 
-def run():
-    app.config.update(TEMPLATES_AUTO_RELOAD=True)
-    app.run(
-        host='0.0.0.0',
-        port=5000
-    )
-
+setup()
+logging.getLogger().info("%s %s", SystemString.PROJECT_NAME, SystemString.PROJECT_VERSION)
 
 if __name__ == '__main__':
-    setup()
-    logging.getLogger().info("%s %s", SystemString.PROJECT_NAME, SystemString.PROJECT_VERSION)
-    run()
+    app.run(
+        host='0.0.0.0'
+    )
     logging.getLogger().info("%s finished", SystemString.PROJECT_NAME)
