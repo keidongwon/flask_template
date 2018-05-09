@@ -10,6 +10,7 @@
         "user": "user",
         "password": "pwd",
         "dbname": "dbname",
+        "encoding": "utf8",
         "pool_size": 5,
         "connect_timeout": 3
     },

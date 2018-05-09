@@ -22,13 +22,14 @@ def init():
                                       log_level=logging.getLevelName(config.get("log", "level")),
                                       console=config.get("log", "console"))
 
-    connect_string = "%s://%s:%s@%s:%d/%s" % \
+    connect_string = "%s://%s:%s@%s:%d/%s?charset=%s" % \
         ('mysql',
         config.get("db", "user"),
         config.get("db", "password"),
         config.get("db", "host"),
         config.get("db", "port"),
-        config.get("db", "dbname"))
+        config.get("db", "dbname"),
+        config.get("db", "encoding"))
     # db, uid, pwd, host, port, dbname
     thealchemy.create_pool(connect_string, 0)
     alchemyhelper.set_instance(thealchemy)
