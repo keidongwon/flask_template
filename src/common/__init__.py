@@ -14,9 +14,7 @@ sys.path.append(_libpath['path'])
 
 # ignore next PEP8 import warning
 from pybolt.util.filebase import FileBase
-from pybolt.platform.version import Version
 
 # create instance
 config = FileBase()
 errorcode = FileBase()
-version = Version()

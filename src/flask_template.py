@@ -3,7 +3,7 @@ import logging
 from flask import Flask
 from flask_restful import Api
 from common.constant import FilePrefix, SystemString
-from common import preload, config, errorcode, version
+from common import preload, config, errorcode
 import routes
 
 
@@ -19,7 +19,6 @@ def setup():
         config.load(FilePrefix.CONFIG)
         preload.init()
         errorcode.load(FilePrefix.ERRORCODE)
-        version.load(FilePrefix.VERSION)
     except IOError as e:
         print(e)
         sys.exit()
@@ -30,6 +29,7 @@ logging.getLogger().info("%s %s", SystemString.PROJECT_NAME, SystemString.PROJEC
 
 if __name__ == '__main__':
     app.run(
-        host='0.0.0.0'
+        host=config.get("system", "ip"),
+        port=config.get("system", "port")
     )
     logging.getLogger().info("%s finished", SystemString.PROJECT_NAME)
