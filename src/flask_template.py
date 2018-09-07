@@ -16,7 +16,6 @@ routes.init(api)
 
 def setup():
     try:
-        config.load(FilePrefix.CONFIG)
         preload.init()
         errorcode.load(FilePrefix.ERRORCODE)
     except IOError as e:

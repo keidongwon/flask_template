@@ -18,3 +18,4 @@ from pybolt.util.filebase import FileBase
 # create instance
 config = FileBase()
 errorcode = FileBase()
+config.load(FilePrefix.CONFIG)
