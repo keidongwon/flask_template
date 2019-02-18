@@ -12,4 +12,7 @@ class SystemString:
 class FilePrefix:
     CONFIG = "config"
     ERRORCODE = "errorcode"
-    VERSION = "version"
+
+
+class DefaultValue:
+    HEADERS = {'Content-Type': 'text/html'}

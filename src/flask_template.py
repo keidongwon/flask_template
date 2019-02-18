@@ -3,7 +3,7 @@ import logging
 from flask import Flask
 from flask_restful import Api
 from common.constant import FilePrefix, SystemString
-from common import preload, config, errorcode, version
+from common import preload, config, errorcode
 import routes
 
 
