@@ -16,20 +16,25 @@ routes.init(api)
 
 def setup():
     try:
-        config.load(FilePrefix.CONFIG)
         preload.init()
         errorcode.load(FilePrefix.ERRORCODE)
-        version.load(FilePrefix.VERSION)
     except IOError as e:
         print(e)
         sys.exit()
 
 
 setup()
-logging.getLogger().info("%s %s", SystemString.PROJECT_NAME, SystemString.PROJECT_VERSION)
+logging.getLogger().info("%s %s (%s)", SystemString.PROJECT_NAME,
+                         SystemString.PROJECT_VERSION,
+                         SystemString.PROJECT_UPDATE)
 
 if __name__ == '__main__':
+    mode = False
+    if config.get("system", "mode") == "debug":
+        mode = True
     app.run(
-        host='0.0.0.0'
+        debug=mode,
+        host=config.get("system", "ip"),
+        port=config.get("system", "port")
     )
     logging.getLogger().info("%s finished", SystemString.PROJECT_NAME)

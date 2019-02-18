@@ -3,8 +3,12 @@ import os
 import sys
 import json
 
+uppath = lambda _path, n: os.sep.join(_path.split(os.sep)[:-n])
+
 # add working path
-_curpath = os.path.dirname(os.getcwd()) + "/src"
+# _curpath = os.path.dirname(os.getcwd()) + "/src"
+_curpath = os.path.dirname(os.path.abspath(__file__))
+_curpath = uppath(_curpath, 1)
 sys.path.append(_curpath)
 
 # add library path (PYTHONPATH)
@@ -14,9 +18,8 @@ sys.path.append(_libpath['path'])
 
 # ignore next PEP8 import warning
 from pybolt.util.filebase import FileBase
-from pybolt.platform.version import Version
 
 # create instance
 config = FileBase()
 errorcode = FileBase()
-version = Version()
+config.load(FilePrefix.CONFIG, _curpath+"/data")
