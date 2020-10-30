@@ -6,7 +6,7 @@ class SystemString:
     PROJECT_NAME = "Flask Project Template"
     PROJECT_VERSION = "0.1"
     PROJECT_LOG = "template"
-    PROJECT_UPDATE = "2019-02-15 09:42:00"
+    PROJECT_UPDATE = "2020-10-30"
 
 
 class FilePrefix:

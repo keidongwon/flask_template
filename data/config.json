@@ -3,6 +3,7 @@
         "ip": "0.0.0.0",
         "port": 5000,
         "mode": "debug",
+        "threaded" : "yes",
         "datetime": "utc",
         "language": "ko"
     },
@@ -22,6 +23,9 @@
         "password": "",
         "max_connections": 10,
         "connect_timeout": 3
+    },
+    "error": {
+        "path": "../data"
     },
     "log": {
         "prefix": "template",
